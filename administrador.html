@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Sistema Academico</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/header-footer.css">
+        <link rel="stylesheet" href="./libs/slick-theme.css">
+        <link rel="stylesheet" href="./libs/slick.css">
+        <link rel="stylesheet" href="./css/admin.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <!-- Header start -->
+        <header class="page-header">
+            <div class="container">
+                <div class="header-wrap">
+                    <a href="/" class="header-logo">
+                        <h1 style="color:rgb(1, 25, 61);">Sistema academico</h1>
+                    </a>
+                    <div class="header-user">
+                        <div class="user-sign-up">
+                            <a href="./login.html">Cerrar Sesion</a>
+                        </div>
+                    </div>
+                    <button class="toggle-menu">
+                        <span>toggle menu</span>
+                    </button>
+                </div>
+                <nav class="header-nav">
+                    <ul class="header-nav-list">
+                        <li class="header-nav-item"><a href="#">Misión</a></li>
+                        <li class="header-nav-item"><a href="#">Visión</a></li>
+                        <li class="header-nav-item"><a href="#">Sobre nosotros</a></li>
+                        <li class="header-nav-item"><a href="#">Asesorias</a></li>
+                        <li class="header-nav-item"><a href="#">Asistencia</a></li>
+                        <li class="header-nav-item"><input
+                                class="header-nav-input" type="text"
+                                placeholder="Buscador..."></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- Header end -->
+        <!-- Main start -->
+        <main class="page-main">
+            <div class="container">
+                <section class="description">
+                    <div class="admin-header">
+                        <h2>Panel de Administración</h2>
+                        <a href="create-user.html">
+                            <button class="create-button" id="openCreateProductModal">
+                                <i class="fas fa-times"></i>Crear Estudiante
+                            </button>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="catalog-items">
+                    <div class="container">
+                        <div class="items-wrap">
+                            <div class="catalog-item">
+                                <div class="catalog-item-img">
+                                    <img src="./images/usuario1.png" alt="usuario1">
+                                </div>
+                                <h4 class="catalog-item-title">Cristian Alarcon</h4>
+                                <span class="catalog-item-price">20 años</span>
+                                <div class="product-buttons">
+                                    <a href="">
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i> Editar Usuarios
+                                        </button>
+                                    </a>
+                                        <button class="delete-button" id="">
+                                          <i class="fas fa-times"></i>Eliminar
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="items-wrap">
+                            <div class="catalog-item">
+                                <div class="catalog-item-img">
+                                    <img src="./images/usuario1.png" alt="usuario1">
+                                </div>
+                                <h4 class="catalog-item-title">Sergio Martinez</h4>
+                                <span class="catalog-item-price">23 años</span>
+                                <div class="product-buttons">
+                                    <a href="">
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i> Editar Usuarios
+                                        </button>
+                                    </a>
+                                        <button class="delete-button" id="">
+                                          <i class="fas fa-times"></i>Eliminar
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <!-- Main end -->
+        <!-- Footer start -->
+        <footer class="page-footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-left">
+                        <div class="footer-links">
+                            <h3 class="footer-links-title">Links Rapidos</h3>
+                            <ul class="footer-links-list">
+                                <li><a href="#">Ubicación de la institucion educativa</a></li>
+                                <li><a href="#">Acerca de Nosotros</a></li>
+                                <li><a href="#">Soporte</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-care">
+                            <h3 class="footer-care-title">Servicio al Estudiante</h3>
+                            <ul class="footer-care-list">
+                                <li><a href="#">Servicio al Estudiante</a></li>
+                                <li><a href="#">Cursos disponibles</a></li>
+                                <li><a href="#">Términos y Condiciones</a></li>
+                                <li><a href="#">Contactános</a></li>
+                                <li><a href="#">Carreras disponibles</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-contact">
+                            <div class="footer-contact-twitter">
+                                <h3 class="footer-twitter-title">Preguntas</h3>
+                                <span class="footer-twitter-desc"><img src="images/twitter-icon-gray.jpg" alt="Twitter Icon">
+                                    Tweet <a href="#">@sistemacademico</a></span>
+                            </div>
+                            <div class="footer-contact-phone">
+                                <h3 class="footer-phone-title">Consulta aqui</h3>
+                                <span class="footer-phone-desc"><a href="tel: 3203492590">3203492590</a></span>
+                            </div>
+                        </div>
+                        <div class="footer-social">
+                            <span class="footer-social-desc">Contamos con cursos 100% certificaciones ademas
+                                de acreditaciones de alta calidad
+                            </span>
+                            <span class="footer-social-links">
+                                <a href="#"><img src="images/fb-icon.jpg" alt="Facebook Icon"></a>
+                                <a href="#"><img src="images/twitter-icon-color.jpg" alt="Twitter Icon"></a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">&copy; 2024, Cristian Alarcon y Sergio Martinez.</p>
+                    <ul class="footer-info">
+                        <li><a href="#">Politecnico Grancolombiano</a></li>
+                        <span class="footer-social-links-mobile">
+                            <a href="#"><img src="images/fb-icon.jpg" alt="Facebook Icon"></a>
+                            <a href="#"><img src="images/twitter-icon-color.jpg" alt="Twitter Icon"></a>
+                        </span>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer end -->
+        <script src="js/header.js"></script>
+        <script src="js/start.js"></script>
+        <script src="libs/slick-slider/slick.js"></script>
+        <script>
+            document.querySelectorAll('.delete-button').forEach(button => {
+              button.addEventListener('click', function(event) {
+                event.preventDefault();
+          
+                const productId = this.getAttribute('id');
+          
+                if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
+                  fetch(`/admin/delete/${productId}`, {
+                    method: 'DELETE'
+                  })
+                  .then(response => {
+                    if (!response.ok) {
+                      throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                  })
+                  .then(data => {
+                    alert('Usuario eliminado exitosamente');
+                    window.location.reload(); // Recargar la página después de eliminar el usuario
+                  })
+                  .catch(error => {
+                    console.error('Error al eliminar el usuario:', error);
+                    alert('Error al eliminar el usuario');
+                  });
+                }
+              });
+            });
+          </script>
+          
+    </body>
+
+</html>
