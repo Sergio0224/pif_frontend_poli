@@ -20,12 +20,12 @@
     <header class="page-header">
         <div class="container">
             <div class="header-wrap">
-                <a href="#" class="header-logo">
+                <a href="/" class="header-logo">
                   <h1 style="color:rgb(1, 25, 61);">Sistema academico</h1>
                 </a>
                 <div class="header-user">
                     <div class="user-sign-up">
-                        <a href="login.html">Iniciar Sesion</a>
+                        <a href="login.html">Cerrar Sesion</a>
                     </div>
                 </div>
                 <button class="toggle-menu">
@@ -34,10 +34,10 @@
             </div>
             <nav class="header-nav">
                 <ul class="header-nav-list">
-                    <li class="header-nav-item"><a href="administrador.html">Panel de administrador</a></li>
-                    <li class="header-nav-item"><a href="nosotros.html">Sobre nosotros</a></li>
-                    <li class="header-nav-item"><a href="contacto.html">Asesorias</a></li>
-                    <li class="header-nav-item"><a href="libreria.html">Libreria</a></li>
+                  <li class="header-nav-item"><a href="administrador.html">Panel Administrador</a></li>
+                  <li class="header-nav-item"><a href="nosotros.html">Sobre nosotros</a></li>
+                  <li class="header-nav-item"><a href="contacto.html">Asesorias</a></li>
+                  <li class="header-nav-item"><a href="libreria.html">Libreria</a></li>
                     <li class="header-nav-item"><input class="header-nav-input" type="text" placeholder="Buscador..."></li>
                 </ul>
             </nav>
@@ -53,39 +53,51 @@
                     <div class="formbold-form-wrapper">      
 
                       <form action="#" method="post" enctype="multipart/form-data">
-                       
-                            <h1 style="color:rgb(1, 25, 61);">Contactenos</h1>
-                        
+
                         <div class="formbold-input-flex">
                           <div>
                             <label for="name" class="formbold-form-label">
-                              Nombre
+                              Nombre del Usuario
                             </label>
-                            <input type="text" name="name" id="name" class="formbold-form-input" required/>
+                            <input type="text" name="name" id="name" value="" class="formbold-form-input" required/>
                           </div>
 
                           <div>
-                            <label for="Correo" class="formbold-form-label"> Correo </label>
-                            <input type="text" id="Correo" name="Correo" required class="formbold-form-input"/>
+                            <label for="edad" class="formbold-form-label"> Edad </label>
+                            <input type="number" id="edad" name="price" min="15" value="" required class="formbold-form-input"/>
                           </div>
                         </div>
                   
                         <div class="formbold-input-flex">
                           <div>
                             <label for="description" class="formbold-form-label">
-                              Telefono
+                              Descripción
                             </label>
-                            <input type="number" name="number" id="number" class="formbold-form-input" required/>
+                            <input type="text" name="description" id="description" class="formbold-form-input" required/>
                           </div>
 
                           <div>
-                            <label for="mensaje" class="formbold-form-label"> Mensaje </label>
-                            <input type="mensaje" id="mensaje" name="mensaje" min="1" required class="formbold-form-input"/>
+                            <label for="quantity" class="formbold-form-label"> Semestre </label>
+                            <input type="number" id="quantity" name="quantity" min="1" value="" required class="formbold-form-input"/>
                           </div>
                         </div>
-                                
                   
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <div class="formbold-input-flex">
+                            <div>
+                              <label for="curso" class="formbold-form-label">
+                                Curso
+                              </label>
+                              <input type="text" id="curso" name="curso"  value="" required class="formbold-form-input"/>
+                            </div>
+  
+                            <div>
+                              <label for="image" class="formbold-form-label"> Imagen </label>
+                              <input type="file" id="img" name="img" accept="image/*" required class="formbold-form-input"/>
+                            </div>
+                          </div>
+                  
+                  
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                       </form>
                     </div>
                   </div>

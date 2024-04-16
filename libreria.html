@@ -37,7 +37,7 @@
                     <ul class="header-nav-list">
                         <li class="header-nav-item"><a href="nosotros.html">Sobre nosotros</a></li>
                         <li class="header-nav-item"><a href="contacto.html">Asesorias</a></li>
-                        <li class="header-nav-item"><a href="libreria.html">Libreria</a></li>
+                        <li class="header-nav-item"><a href="administrador.html">Panel de administrador</a></li>
                         <li class="header-nav-item"><input
                                 class="header-nav-input" type="text"
                                 placeholder="Buscador..."></li>
@@ -52,57 +52,36 @@
                 <section class="description">
                     <div class="admin-header">
                         <h2>Panel de Administración</h2>
-                        <a href="create-user.html">
-                            <button class="create-button" id="openCreateProductModal">
-                                <i class="fas fa-times"></i>Crear Estudiante
-                            </button>
-                        </a>
                     </div>
                 </section>
 
                 <section class="catalog-items">
                     <div class="container">
                         <div class="items-wrap">
+                            <a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.planetadelibros.com.mx/libros_contenido_extra/37/36904_1_CIEN_ANOS_DE_SOLEDAD_50_aniv.pdf">
                             <div class="catalog-item">
+                                
                                 <div class="catalog-item-img">
-                                    <img src="./images/usuario1.png" alt="usuario1">
+                                    <img src="./images/libro1.jpg" alt="libro1">
                                 </div>
-                                <h4 class="catalog-item-title">Cristian Alarcon</h4>
-                                <span class="catalog-item-price">20 años</span>
-                                <div class="product-buttons">
-                                    <a href="edit-user.html">
-                                        <button class="edit-button">
-                                            <i class="fas fa-edit"></i>
-                                        Editar Usuarios
-                                        </button>
-                                    </a>
-                                        <button class="delete-button" id="">
-                                          <i class="fas fa-times"></i>Eliminar
-                                        </button>
-                                </div>
+                                <h4 class="catalog-item-title">Titulo: 100 años de soledad</h4>
+                                <span class="catalog-item-price">Autor: Gabriel Garcia Marquez</span>
                             </div>
+                        </a>
                         </div>
                     </div>
                     <div class="container">
+                    <a href="https://www.cervantesvirtual.com/obra-visor/el-ingenioso-hidalgo-don-quijote-de-la-mancha-6/html/">
                         <div class="items-wrap">
                             <div class="catalog-item">
                                 <div class="catalog-item-img">
-                                    <img src="./images/usuario1.png" alt="usuario1">
+                                    <img src="./images/libro2.jpg" alt="libro2">
                                 </div>
-                                <h4 class="catalog-item-title">Sergio Martinez</h4>
-                                <span class="catalog-item-price">23 años</span>
-                                <div class="product-buttons">
-                                    <a href="edit-user.html">
-                                        <button class="edit-button">
-                                            <i class="fas fa-edit"></i> Editar Usuarios
-                                        </button>
-                                    </a>
-                                        <button class="delete-button" id="">
-                                          <i class="fas fa-times"></i>Eliminar
-                                        </button>
-                                </div>
+                                <h4 class="catalog-item-title">Titulo: Don Quijote de la mancha</h4>
+                                <span class="catalog-item-price">Autor: Miguel de Servantes</span>
                             </div>
                         </div>
+                    </a>
                     </div>
                 </section>
             </div>
@@ -171,19 +150,6 @@
         <script src="js/header.js"></script>
         <script src="js/start.js"></script>
         <script src="libs/slick-slider/slick.js"></script>
-        <script>
-            document.querySelectorAll('.delete-button').forEach(button => {
-              button.addEventListener('click', function(event) {
-                event.preventDefault();
-          
-                const productId = this.getAttribute('id');
-          
-                if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
-                }
-              });
-            });
-          </script>
-          
     </body>
 
 </html>
