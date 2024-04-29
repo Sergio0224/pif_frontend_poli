@@ -1,0 +1,11 @@
+npm -init y
+
+npm i mysql2 --save
+npm install express
+npm install body-parser
+npm install ejs
+npm install express-session
+npm install multer
+npm install sweetalert2
+
+node server //Para correr el servidor (Puerto 3000, asegurarse de haber iniciado el node antes, para que se cree la carpeta node_modules y haber importado el archivo dcompras.sql para crear la base de datos, si es necesario ajustar los valores de conexión a la base de datos, por defecto user:root pass: host:localhost - Para iniciar sesión las credenciales son user:admin pass:pass)
