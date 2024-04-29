@@ -221,8 +221,6 @@ app.get('/admin/edit/:id', requireLogin, async (req, res) => {
 
 app.post('/admin/edit/:id', requireLogin, async (req, res) => {
     const userId = req.params.id;
-    // const { name, description, price, quantity, promo} = req.body;
-    // const img = req.file ? req.file.filename : null;
   
     try {
       const connection = await mysql.createConnection({
@@ -232,12 +230,12 @@ app.post('/admin/edit/:id', requireLogin, async (req, res) => {
         database: 'sistemaacademico'
       });
   
-      let name = "test"
+      let name = "JULIO MENDOZA"
       let age = "30"
-      let description = "Buen Estudiante"
-      let semestre = 7
+      let description = "Estudiante autodidacta"
+      let semestre = 9
       let curso = "Ingenieria de sistemas"
-      let img = "1696903341198-zyro-image (1).png"
+      let img = "usuario4.jpg"
   
       const sql = `UPDATE user SET name=?, age=?, description=?, semestre=?, curso=?, img=? WHERE id=?`;
       const values = [name, age, description, semestre, curso, img, userId];
