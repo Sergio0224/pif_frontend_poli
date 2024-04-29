@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sistema Academico</title>
-    <link rel="icon" href="./images/title.png" type="image/x-icon">
+    <link rel="icon" href="/images/title.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/header-footer.css">
-    <link rel="stylesheet" href="./libs/slick-theme.css">
-    <link rel="stylesheet" href="./libs/slick.css">
-    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="/css/header-footer.css">
+    <link rel="stylesheet" href="/libs/slick-theme.css">
+    <link rel="stylesheet" href="/libs/slick.css">
+    <link rel="stylesheet" href="/css/admin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
@@ -21,7 +21,7 @@
     <header class="page-header">
         <div class="container">
             <div class="header-wrap">
-                <a href="#" class="header-logo">
+                <a href="/" class="header-logo">
                   <h1 style="color:rgb(1, 25, 61);">Sistema academico</h1>
                 </a>
                 <div class="header-user">
@@ -35,8 +35,10 @@
             </div>
             <nav class="header-nav">
                 <ul class="header-nav-list">
-                    <li class="header-nav-item"><a href="administrador.html">Panel de administrador</a></li>
-                    <li class="header-nav-item"><a href="libreria.html">Libreria</a></li>
+                  <li class="header-nav-item"><a href="/admin">Panel Administrador</a></li>
+                  <li class="header-nav-item"><a href="nosotros.html">Sobre nosotros</a></li>
+                  <li class="header-nav-item"><a href="asesorias.html">Asesorias</a></li>
+                  <li class="header-nav-item"><a href="/libreria">Libreria</a></li>
                     <li class="header-nav-item"><input class="header-nav-input" type="text" placeholder="Buscador..."></li>
                 </ul>
             </nav>
@@ -51,41 +53,52 @@
                 <div class="formbold-main-wrapper">
                     <div class="formbold-form-wrapper">      
 
-                      <form action="#" method="post" enctype="multipart/form-data">
-                       
-                            <h1 style="color:rgb(1, 25, 61);">Bienvenido al modulo de Asesorias</h1>
-                            <br/><br/><br/>
-                        
+                      <form action="/admin/edit/<%= user.id%>" method="post" enctype="multipart/form-data">
+
                         <div class="formbold-input-flex">
                           <div>
                             <label for="name" class="formbold-form-label">
-                              Nombre
+                              Nombre del Usuario
                             </label>
-                            <input type="text" name="name" id="name" class="formbold-form-input" required/>
+                            <input type="text" name="name" id="name" value="<%= user.name %>" class="formbold-form-input" required/>
                           </div>
 
                           <div>
-                            <label for="Correo" class="formbold-form-label"> Correo </label>
-                            <input type="text" id="Correo" name="Correo" required class="formbold-form-input"/>
+                            <label for="age" class="formbold-form-label"> Edad </label>
+                            <input type="number" id="age" name="age" min="15" value="<%= user.age %>" required class="formbold-form-input"/>
                           </div>
                         </div>
                   
                         <div class="formbold-input-flex">
                           <div>
                             <label for="description" class="formbold-form-label">
-                              Telefono
+                              Descripción
                             </label>
-                            <input type="number" name="number" id="number" class="formbold-form-input" required/>
+                            <input type="text" name="description" id="description" value="<%= user.description %>" class="formbold-form-input" required/>
                           </div>
 
                           <div>
-                            <label for="mensaje" class="formbold-form-label"> Mensaje </label>
-                            <input type="mensaje" id="mensaje" name="mensaje" min="1" required class="formbold-form-input"/>
+                            <label for="semestre" class="formbold-form-label"> Semestre </label>
+                            <input type="number" id="semestre" name="semestre" min="1" value="<%= user.semestre %>" required class="formbold-form-input"/>
                           </div>
                         </div>
-                                
                   
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <div class="formbold-input-flex">
+                            <div>
+                              <label for="curso" class="formbold-form-label">
+                                Curso
+                              </label>
+                              <input type="text" id="curso" name="curso"  value="<%= user.curso %>" required class="formbold-form-input"/>
+                            </div>
+  
+                            <div>
+                              <label for="image" class="formbold-form-label"> Imagen </label>
+                              <input type="file" id="img" name="img" value="<%= user.img %>" accept="image/*" required class="formbold-form-input"/>
+                            </div>
+                          </div>
+                  
+                  
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                       </form>
                     </div>
                   </div>
@@ -254,7 +267,7 @@
                   <div class="footer-contact">
                       <div class="footer-contact-twitter">
                           <h3 class="footer-twitter-title">Preguntas</h3>
-                          <span class="footer-twitter-desc"><img src="images/twitter-icon-gray.jpg" alt="Twitter Icon">
+                          <span class="footer-twitter-desc"><img src="/images/twitter-icon-gray.jpg" alt="Twitter Icon">
                               Tweet <a href="contacto.html">@sistemacademico</a></span>
                       </div>
                       <div class="footer-contact-phone">
@@ -267,8 +280,8 @@
                           de acreditaciones de alta calidad
                       </span>
                       <span class="footer-social-links">
-                          <a href="#"><img src="images/fb-icon.jpg" alt="Facebook Icon"></a>
-                          <a href="#"><img src="images/twitter-icon-color.jpg" alt="Twitter Icon"></a>
+                          <a href="#"><img src="/images/fb-icon.jpg" alt="Facebook Icon"></a>
+                          <a href="#"><img src="/images/twitter-icon-color.jpg" alt="Twitter Icon"></a>
                       </span>
                   </div>
               </div>
@@ -278,8 +291,8 @@
               <ul class="footer-info">
                   <li><a href="#">Politecnico Grancolombiano</a></li>
                   <span class="footer-social-links-mobile">
-                      <a href="#"><img src="images/fb-icon.jpg" alt="Facebook Icon"></a>
-                      <a href="#"><img src="images/twitter-icon-color.jpg" alt="Twitter Icon"></a>
+                      <a href="#"><img src="/images/fb-icon.jpg" alt="Facebook Icon"></a>
+                      <a href="#"><img src="/images/twitter-icon-color.jpg" alt="Twitter Icon"></a>
                   </span>
               </ul>
           </div>
@@ -287,5 +300,31 @@
   </footer>
     <!-- Footer end -->
 </body>
-
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Evita la recarga de la página
+  
+      var user = document.getElementsByName("user")[0].value;
+      var pass = document.getElementsByName("password")[0].value;
+  
+      // Envía la solicitud de inicio de sesión aquí
+      fetch('http://localhost:3000/check_login', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ user, pass })
+      })
+      .then(response => response.text())
+      .then(data => {
+          if (data === "success") {
+            alert("Inicio de sesión exitoso");
+            window.location.href = '/admin'; // Redirige al usuario a la página de administradores
+          } else {
+            alert("Inicio de sesión incorrecto");
+          }
+        })
+      .catch(error => console.error('Error:', error));
+  });
+</script>
 </html>

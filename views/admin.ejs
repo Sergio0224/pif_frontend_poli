@@ -26,7 +26,7 @@
                     </a>
                     <div class="header-user">
                         <div class="user-sign-up">
-                            <a href="./login.html">Cerrar Sesion</a>
+                            <a href="/login">Cerrar Sesion</a>
                         </div>
                     </div>
                     <button class="toggle-menu">
@@ -35,9 +35,9 @@
                 </div>
                 <nav class="header-nav">
                     <ul class="header-nav-list">
-                        <li class="header-nav-item"><a href="nosotros.html">Sobre nosotros</a></li>
-                        <li class="header-nav-item"><a href="asesorias.html">Asesorias</a></li>
-                        <li class="header-nav-item"><a href="libreria.html">Libreria</a></li>
+                        <li class="header-nav-item"><a href="/nosotrosUser">Sobre nosotros</a></li>
+                        <li class="header-nav-item"><a href="/asesorias">Asesorias</a></li>
+                        <li class="header-nav-item"><a href="/libreria">Libreria</a></li>
                         <li class="header-nav-item"><input
                                 class="header-nav-input" type="text"
                                 placeholder="Buscador..."></li>
@@ -52,7 +52,7 @@
                 <section class="description">
                     <div class="admin-header">
                         <h2>Panel de Administración</h2>
-                        <a href="create-user.html">
+                        <a href="/admin/create">
                             <button class="create-button" id="openCreateProductModal">
                                 <i class="fas fa-times"></i>Crear Estudiante
                             </button>
@@ -63,58 +63,25 @@
                 <section class="catalog-items">
                     <div class="container">
                         <div class="items-wrap">
+                            <% users.forEach(user => { %>
                             <div class="catalog-item">
                                 <div class="catalog-item-img">
-                                    <img src="./images/usuario1.png" alt="usuario1">
+                                    <img src="images/<%= user.img %>" alt="<%= user.description %>">
                                 </div>
-                                <h4 class="catalog-item-title">Cristian Alarcon</h4>
-                                <span class="catalog-item-price">20 años</span>
+                                <h4 class="catalog-item-title"><%= user.name %></h4>
+                                <span class="catalog-item-price"><%= user.age %> años</span>
                                 <div class="product-buttons">
-                                    <a href="edit-user.html">
+                                    <a href="/admin/edit/<%= user.id %>">
                                         <button class="edit-button">
                                             <i class="fas fa-edit"></i> Editar Usuarios
                                         </button>
                                     </a>
-                                        <button class="delete-button" id="">
+                                        <button class="delete-button" id="<%= user.id %>">
                                           <i class="fas fa-times"></i>Eliminar
                                         </button>
                                 </div>
                             </div>
-                            <div class="catalog-item">
-                                <div class="catalog-item-img">
-                                    <img src="./images/usuario2.png" alt="usuario2">
-                                </div>
-                                <h4 class="catalog-item-title">Sergio Martinez</h4>
-                                <span class="catalog-item-price">23 años</span>
-                                <div class="product-buttons">
-                                    <a href="edit-user.html">
-                                        <button class="edit-button">
-                                            <i class="fas fa-edit"></i> Editar Usuarios
-                                        </button>
-                                    </a>
-                                        <button class="delete-button" id="">
-                                          <i class="fas fa-times"></i>Eliminar
-                                        </button>
-                                </div>
-                            </div>
-                            <div class="catalog-item">
-                                <div class="catalog-item-img">
-                                    <img src="./images/usuario3.png" alt="usuario3">
-                                </div>
-                                <h4 class="catalog-item-title">Pedro Gomez</h4>
-                                <span class="catalog-item-price">28 años</span>
-                                <div class="product-buttons">
-                                    <a href="edit-user.html">
-                                        <button class="edit-button">
-                                            <i class="fas fa-edit"></i>
-                                        Editar Usuarios
-                                        </button>
-                                    </a>
-                                        <button class="delete-button" id="">
-                                          <i class="fas fa-times"></i>Eliminar
-                                        </button>
-                                </div>
-                            </div>
+                            <% }); %>
                         </div>
                     </div>
                 </section>
@@ -181,22 +148,39 @@
             </div>
         </footer>
         <!-- Footer end -->
-        <script src="js/header.js"></script>
-        <script src="js/start.js"></script>
-        <script src="libs/slick-slider/slick.js"></script>
-        <script>
-            document.querySelectorAll('.delete-button').forEach(button => {
-              button.addEventListener('click', function(event) {
-                event.preventDefault();
-          
-                const productId = this.getAttribute('id');
-          
-                if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
-                }
+        
+          <script src="js/header.js"></script>
+          <script src="js/start.js"></script>
+          <script src="libs/slick-slider/slick.js"></script>
+          <script>
+              document.querySelectorAll('.delete-button').forEach(button => {
+                button.addEventListener('click', function(event) {
+                  event.preventDefault();
+            
+                  const userId = this.getAttribute('id');
+            
+                  if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
+                    fetch(`/admin/delete/${userId}`, {
+                      method: 'DELETE'
+                    })
+                    .then(response => {
+                      if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                      }
+                      return response.json();
+                    })
+                    .then(data => {
+                      alert('Usuario eliminado exitosamente');
+                      window.location.reload(); // Recargar la página después de eliminar el usuario
+                    })
+                    .catch(error => {
+                      console.error('Error al eliminar el usuario:', error);
+                      alert('Error al eliminar el usuario');
+                    });
+                  }
+                });
               });
-            });
-          </script>
-          
+            </script>
     </body>
 
 </html>
