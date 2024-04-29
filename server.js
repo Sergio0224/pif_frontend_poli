@@ -229,7 +229,7 @@ app.post('/admin/edit/:id', requireLogin, async (req, res) => {
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'dcompras'
+        database: 'sistemaacademico'
       });
   
       let name = "test"
